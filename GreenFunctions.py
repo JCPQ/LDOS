@@ -42,12 +42,14 @@ def G0_krho_zz(k_rho,k):
     """
     The zz element of the angle integrated green function in free space 
     see Novotny&Hecht 2nd Ed 10.25
-    Input:
+    
+    Input
+    -------
         k_rho - the radial component of the wavevector
         k - the wave vector in the medium
     
     One might think that the upward Green function differs from the downward
-    due to all the (z<z0 and z>z0 dependent) signs that are present in f.i.
+    due to all the (z<z0 and z>z0 dependent) signs that are present in e.g
     eq 10.6 but the diagonal elements dont have this and the propagation 
     upwards or downwards both have a positive phase 
     accumulation (exp(1j*kz*|z-z0|))
@@ -59,13 +61,22 @@ def G0_krho_zz(k_rho,k):
 def Gref_krho_xx(k_rho,k0,MultiL_up,MultiL_down,d_up,d_down):
     """
     Calculates the reflected green function xx in k-space (the xx component 
-    of the Green tensor). Inputs are:
-        k_rho - the radial k vector component
-        k - the vacuum wavevector
-        MultiL_up - Multilayer above the dipole
-        MultiL_down - Multilayer below the dipole
-        d_up - the distance to the upper first interface
-        d_down - the distance to the lower first interface
+    of the Green tensor). 
+    
+    Inputs
+    -------
+    k_rho : 1D array of float 
+        the radial k vector component
+    k : float
+        the vacuum wavevector
+    MultiL_up : Multilayer object (defined in ScatterinMatrix module)
+        Multilayer above the dipole
+    MultiL_down : Multilayer object (defined in ScatterinMatrix module)
+        Multilayer below the dipole
+    d_up : float
+        the distance to the upper first interface
+    d_down : float
+        the distance to the lower first interface
 
     One tricky thing is that the reflection coefficients as retrieved from
     the transfer matrix for S and P polarization have a sign difference for 

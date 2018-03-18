@@ -117,7 +117,7 @@ def TransferInterfaceF(k_rho,k0,e1,e2):
     output:
         Mp and Ms the transfer matrices of the interface for S and P polarisation
         the output has the form of an 4 dimensional array (2D array of 2x2 arrays)
-    WARNING; this method is unstable for evanescent waves
+    WARNING; stacking this method is unstable for evanescent waves
     """
     # some input checks (not complete)
     if not (isinstance(e1,complex) or isinstance(e2,complex)):
@@ -200,7 +200,6 @@ def SMatrixStack(k_rho,k0,MultiL):
     Rud_s=Zero
     
     # start the loop over all interfaces and layers
-
     for n in range(0,N-1):
         e1=MultiL.eps[n]
         e2=MultiL.eps[n+1]
